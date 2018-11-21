@@ -7,7 +7,7 @@ class Thread extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$this->load->view('thread');
+		$this->load->view('thread_view');
 	}
 }
 class Upload_Controller extends CI_Controller {
@@ -40,7 +40,7 @@ class Upload_Controller extends CI_Controller {
 					'image' => $file_name
 			);
 			
-			$this->db->where('ID', );
+			//$this->db->where('ID', );
 			$this->db->update('bboard',$data);
 			print_r($this->upload->data());
 			redirect('');

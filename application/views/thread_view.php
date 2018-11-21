@@ -50,33 +50,44 @@
     <div class="modal-dialog vertical-align-center modal-sm">
 
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 style="font-weight:bold;" class="modal-title">Vahvista poisto</h4>
-        </div>
+        
 
         <?php
+          echo '<div class="row">';
+          echo '<div class="col-md-6 col-xs-8">';
+          echo '<div id="threads">'; 
+          $threadview = "";
+          $threadview .= '<table class="table" border="1">';
+          $threadview .= '<thead><tr><th>ID</th><th>Name</th><th>Comment</th><th style="width:30px"></th></tr></thead>';
+          $query = $this->db->query("SELECT ID, name, comment, threadID  FROM bboard WHERE threadID = threadID");
+           
+           if(isset($query))
+           {
+            foreach ($query->result() as $row)
+            {
+             $id        = "$row->ID";
+             $name      = "$row->name";
+             $comment   = "$row->comment";
+  
+                $threadview .= '<tr>';
+                $threadview .= '<td>'.$id.'</td>';
+                $threadview .= '<td>'.$name.'</td>';
+                $threadview .= '<td>'.$comment.'</td>';
+                $threadview .= '</tr>';
+                
+            }
+           }
 
-        $query = $this->db->query("SELECT id, name, comment, image  FROM bboard WHERE threadID ='threadID'");
-
-		foreach ($query->result() as $row)
-		{
-			$id 	   = "$row->id";
-			$name	   = "$row->name";
-			$comment   = "$row->comment";
-		}
-        	foreach ($query->result_array() as $row)
-			{
-				echo '<img src="'.base_url().'img/'.$row['image'].'" class="img-responsive img-thumbnail" style="width: 200px;">';
-			}
-		    ?>
-        <div class="modal-footer">
-     
-        <?php
-         echo '<button type="button" class="btn btn-danger"><a href="'.base_url().'sivu/delete_tyohistoria/'.$id.'" style="text-decoration:none;" id="confirm-delete" >Poista</a></button>';//Poisto nappi
-         ?>
-        <button type="button" class="btn btn-default"  data-dismiss="modal"><a href="" style="text-decoration:none;" id="cancel">Peruuta</a></button>
-        </div>
+           else
+           {
+            echo "aw fuck";
+           }
+              echo $threadview;
+              echo '</table>';
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
+          ?>
       </div>
      </div>
     </div>
