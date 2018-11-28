@@ -8,10 +8,11 @@ class thread extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->model('thread_model');
+		$threadData = $this->Thread_model->load_thread($threadID);
 
 	}
 
-	public function __construct() {
+	/*blic function __construct() {
 		parent::__construct();
 	}
 	
@@ -49,6 +50,6 @@ class thread extends CI_Controller {
 			$error = array('error' => $this->upload->display_errors());
 		//	$this->load->template('members');
 		}
-	}
+	}*/
 }
 ?>
