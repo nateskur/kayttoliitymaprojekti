@@ -1,17 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Thread extends CI_Controller {
+class thread extends CI_Controller {
 
-	public function index()
+	public function view_thread($threadID)
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->view('thread_view');
 	}
-}
-class Upload_Controller extends CI_Controller {
-	
+
 	public function __construct() {
 		parent::__construct();
 	}

@@ -26,14 +26,19 @@
              $id        = "$row->ID";
              $name      = "$row->name";
              $comment   = "$row->comment";
+             $threadID  = "$row->threadID";
              $threadOK  = true;
                 $threads .= '<tr>';
                 $threads .= '<td>'.$id.'</td>';
                 $threads .= '<td>'.$name.'</td>';
                 $threads .= '<td>'.$comment.'</td>';
+                $threads .= '<td><button type="button" class="btn btn-success" href="'.base_url().'thread/view_thread/'.$threadID.'" style="text-decoration:none;" type="submit">Thread</button></td>';
                 $threads .= '</tr>';
+
                 
             }
+            
+         
            }
            if($threadOK)
             echo $threads;
