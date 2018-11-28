@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Imageboard catalog</title>
+	<title>shitposting threads</title>
 	<link href="<?php echo base_url();?>bootstrap/css/bootstrap.css" rel="stylesheet">
   <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
@@ -32,7 +32,7 @@
                 $threads .= '<td>'.$id.'</td>';
                 $threads .= '<td>'.$name.'</td>';
                 $threads .= '<td>'.$comment.'</td>';
-                $threads .= '<td><button type="button" class="btn btn-success" href="'.base_url().'thread/view_thread/'.$threadID.'" style="text-decoration:none;" onClick="location.'.base_url().'thread/view_thread/'.$threadID.'">Thread</button></td>';
+                $threads .= '<td><a role="button" id="kirjauduulos" style="float:right;" href="'.base_url().'thread/thread_view/'.$threadID.'" >Thread</button></a></td>';
                 $threads .= '</tr>';
             }
            }

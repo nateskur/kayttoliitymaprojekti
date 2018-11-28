@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class thread extends CI_Controller {
 
-	public function view_thread($threadID)
+	public function thread_view($threadID)
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
@@ -14,7 +14,7 @@ class thread extends CI_Controller {
 
 	/*blic function __construct() {
 		parent::__construct();
-	}
+	}*/
 	
 	public function file_view(){
 		$this->load->view('thread_view', array('error' => ' ' ));
@@ -50,6 +50,6 @@ class thread extends CI_Controller {
 			$error = array('error' => $this->upload->display_errors());
 		//	$this->load->template('members');
 		}
-	}*/
+	}
 }
 ?>
