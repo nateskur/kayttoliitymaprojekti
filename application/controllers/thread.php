@@ -7,7 +7,8 @@ class thread extends CI_Controller {
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$this->load->view('thread_view');
+		$this->load->model('thread_model');
+
 	}
 
 	public function __construct() {

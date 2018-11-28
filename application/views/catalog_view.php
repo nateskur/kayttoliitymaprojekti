@@ -32,13 +32,9 @@
                 $threads .= '<td>'.$id.'</td>';
                 $threads .= '<td>'.$name.'</td>';
                 $threads .= '<td>'.$comment.'</td>';
-                $threads .= '<td><button type="button" class="btn btn-success" href="'.base_url().'thread/view_thread/'.$threadID.'" style="text-decoration:none;" type="submit">Thread</button></td>';
+                $threads .= '<td><button type="button" class="btn btn-success" href="'.base_url().'thread/view_thread/'.$threadID.'" style="text-decoration:none;" onClick="location.'.base_url().'thread/view_thread/'.$threadID.'">Thread</button></td>';
                 $threads .= '</tr>';
-
-                
             }
-            
-         
            }
            if($threadOK)
             echo $threads;
@@ -46,7 +42,6 @@
            {
             echo "aw fuck";
            }
-            
               echo '</table>';
               echo '</div>';
               echo '</div>';
