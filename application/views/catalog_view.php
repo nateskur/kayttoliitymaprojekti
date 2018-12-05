@@ -32,7 +32,7 @@
                 $threads .= '<td>'.$id.'</td>';
                 $threads .= '<td>'.$name.'</td>';
                 $threads .= '<td>'.$comment.'</td>';
-                $threads .= '<td><a role="button" id="kirjauduulos" style="float:right;" href="'.base_url().'thread/thread_view/'.$threadID.'" >Thread</button></a></td>';
+                $threads .= '<td><a role="button" id="kirjauduulos" style="float:right;" href="'.base_url().'board/thread/'.$threadID.'" >Thread</button></a></td>';
                 $threads .= '</tr>';
             }
            }
