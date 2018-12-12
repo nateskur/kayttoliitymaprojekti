@@ -12,5 +12,13 @@ class Catalog extends CI_Controller {
 		$this->load->database();
 		//$data = $this->catalog_model->get_threads();
 	}
+	public function thread($threadID)
+	{
+		
+		$threadData = $this->Thread_model->load_thread($threadID);
+		$this->load->helper('form');
+		$this->load->view('thread_view, $threadID');
+
+	}
 }
 ?>

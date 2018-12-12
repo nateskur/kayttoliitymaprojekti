@@ -19,25 +19,13 @@
     <div class="modal-dialog vertical-align-center modal-sm">
 
       <div class="modal-content">
-          <?php
-
-          	echo form_open_multipart('Upload_controller/do_upload');
-			echo "<form><input type='file' id='uploadBox' name='image' size='20' class=''/>"; 
-			echo '<br>';
-			echo form_open('sivu/koulutukset_lisaus');
-			echo '<h5 style="font-weight:bold;">Alkoi</h5>';
-			echo form_input($name);
-			echo "<br>";
-			echo '<h5 style="font-weight:bold;">Loppui</h5>';
-			echo form_input($comment);
-			echo "<br>";
-			echo "<br>";
-			echo form_submit('submit', 'Lisää koulutus', 'id="nappi"');
-			echo '</form></div>';
-
-          
-         
-          ?>
+          <?php echo form_open('newpost'); ?>
+            <label for="name">Name</label>
+            <input type="name" name="name" /><br />
+      
+            <label for="comment">Comment</label>
+            <textarea name="comment"></textarea><br />
+        <input type="submit" name="submit" value="Create news item" />
       </div>
      </div>
     </div>
@@ -48,7 +36,6 @@
   <div class="modal fade" id="mymodalThread">
    <div class="vertical-alignment-helper">
     <div class="modal-dialog vertical-align-center modal-sm">
-
       <div class="modal-content">
         
 
