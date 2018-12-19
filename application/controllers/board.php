@@ -11,15 +11,15 @@ class board extends CI_Controller {
                 $this->load->helper('url');
         }
 
-	public function thread($threadID)
+	public function thread($id)
 	{
 		
-		$threadData = $this->Thread_model->load_thread($threadID);
+		$threadData = $this->catalog_model->load_thread($threadID);
 		$this->load->helper('form');
 		$this->load->view('thread_view, $threadID');
 
 	}
-	public function newpost(){
+	public function newpost($threadID){
 		$this->load->helper('form');
     	$this->load->library('form_validation');
     	$this->form_validation->set_rules('name', 'User');

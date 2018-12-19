@@ -10,7 +10,7 @@
  	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/blitzer/jquery-ui.css" type="text/css" />
 </head>
 <body>
-<div>
+<div class="container">
   
 
   <!-- Post a comment to the thread -->
@@ -19,13 +19,18 @@
     <div class="modal-dialog vertical-align-center modal-sm">
 
       <div class="modal-content">
-          <?php echo form_open('newpost'); ?>
-            <label for="name">Name</label>
-            <input type="name" name="name" /><br />
-      
-            <label for="comment">Comment</label>
-            <textarea name="comment"></textarea><br />
-        <input type="submit" name="submit" value="Create news item" />
+          <?php echo form_open('board/newpost/'.$threadID.'');
+                echo validation_errors();
+                echo '<h5 style="font-weight:bold;">Name</h5>';
+                echo form_input($inputName);
+                echo "<br>";
+                echo '<h5 style="font-weight:bold;">Comment</h5>';
+                echo form_input($inputComment);
+                echo "<br>";
+                echo "<br>";
+                echo form_submit('submit', 'Make a post', 'id="nappi"');
+                echo '</div>';
+          ?>
       </div>
      </div>
     </div>
